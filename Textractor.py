@@ -12,6 +12,9 @@ import enchant  # For spell checking
 # Path to Tesseract OCR executable
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'  # Adjust the path as needed
 
+# Path to Hunspell dictionaries
+enchant.set_param("enchant.myspell.dictionary.path", r"C:\Users\MALA154\hunspell") # Adjust the path as needed
+
 # Initialize dictionaries for English and German
 english_dict = enchant.Dict("en_US")
 german_dict = enchant.Dict("de_DE")
