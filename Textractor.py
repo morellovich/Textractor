@@ -7,9 +7,14 @@ from pdf2image import convert_from_path
 from PyPDF2 import PdfReader, PdfWriter
 from io import BytesIO
 from datetime import datetime
+import enchant  # For spell checking
 
 # Path to Tesseract OCR executable
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'  # Adjust the path as needed
+
+# Initialize dictionaries for English and German
+english_dict = enchant.Dict("en_US")
+german_dict = enchant.Dict("de_DE")
 
 # GUI Application
 def select_folders():
@@ -78,12 +83,17 @@ def convert_pdf_to_searchable(file_path, output_dir, log):
         pdf_writer = PdfWriter()
 
         for img_index, image in enumerate(images):
-            # Perform OCR on the image to extract text
-            text = pytesseract.image_to_pdf_or_hocr(image, extension='pdf')
+            # Perform OCR on the image to extract raw text
+            raw_text = pytesseract.image_to_string(image, lang="deu+eng")  # OCR for both German and English
 
-            # Use BytesIO to handle the result as a file-like object
-            pdf_page = PdfReader(BytesIO(text)).pages[0]
-            pdf_writer.add_page(pdf_page)
+            # Run spell check on the extracted text
+            corrected_text = spell_check(raw_text)
+
+            # Convert the corrected text back to PDF format
+            pdf_page = pytesseract.image_to_pdf_or_hocr(image, extension='pdf')
+
+            # Add the corrected PDF page to the writer
+            pdf_writer.add_page(PdfReader(BytesIO(pdf_page)).pages[0])
 
         # Construct the output file path
         relative_path = os.path.relpath(file_path, os.path.dirname(file_path))
@@ -102,6 +112,24 @@ def convert_pdf_to_searchable(file_path, output_dir, log):
     except Exception as e:
         log.write(f"  Error during conversion: {e}\n")
 
+# Spell Check Function
+def spell_check(text):
+    corrected_text = []
+    words = text.split()
+
+    for word in words:
+        # Check if word is valid in either English or German
+        if english_dict.check(word) or german_dict.check(word):
+            corrected_text.append(word)  # Keep the original word if valid
+        else:
+            # Suggest the most likely correction from either dictionary
+            suggestions = english_dict.suggest(word) + german_dict.suggest(word)
+            if suggestions:
+                corrected_text.append(suggestions[0])  # Use the first suggestion
+            else:
+                corrected_text.append(word)  # If no suggestions, keep the original word
+
+    return ' '.join(corrected_text)
 
 # GUI Setup
 root = tk.Tk()
