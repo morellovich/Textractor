@@ -63,15 +63,18 @@ On other OS (Not Windows)
 pytesseract.pytesseract.tesseract_cmd = 'Path/To/Tesseract-OCR/executable/'
 ```
 
+**3. Download and Install Poppler** binaries from [**Owen Schwartz**](https://github.com/oschwartz10612)
+[here](https://github.com/oschwartz10612/poppler-windows/releases).
+
+Add PATH variables for Poppler to accordingly to `poppler\bin`
+
 **3. Install Required Python Packages**
 
 Run the following command to install all necessary dependencies:
 
 ```bash
-pip install pdf2image pytesseract tkinter pyenchan
+pip install pdf2image pytesseract tkinter pyenchant
 ```
-
-t
 
 **4. Hunspell Dictionaries Setup**
 
@@ -91,7 +94,7 @@ enchant.set_param(\"enchant.myspell.dictionary.path\", r\'C:\Path\To\Hunspell\Di
 
 **5. Update Environment PATH Variables**
 
-Ensure that both **Tesseract OCR** and **Hunspell** paths are included
+Ensure that **Tesseract OCR** and **Hunspell** paths are included
 in your system's PATH environment variables to allow the software to
 locate them during execution.
 
