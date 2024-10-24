@@ -57,6 +57,12 @@ to the Tesseract-OCR executable (make sure the path is correct):
 pytesseract.pytesseract.tesseract_cmd = r\'C:\Path\To\Tesseract-OCR\tesseract.exe\'
 ```
 
+On other OS (Not Windows)
+
+```python
+pytesseract.pytesseract.tesseract_cmd = 'Path/To/Tesseract-OCR/executable/'
+```
+
 **3. Install Required Python Packages**
 
 Run the following command to install all necessary dependencies:
