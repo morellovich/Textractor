@@ -117,11 +117,11 @@ pip install pdf2image pytesseract tkinter pyenchant
 
 To ensure the spell-check functionality works:
 
-    A. **Install Hunspell Dictionaries**:
-      Download and install **Hunspell**
-      dictionaries for **German** (de_DE) and **English** (en_US)
-      languages. You can find the dictionaries
-      [here](https://github.com/wooorm/dictionaries).
+A. **Install Hunspell Dictionaries**:
+Download and install **Hunspell**
+dictionaries for **German** (de_DE) and **English** (en_US)
+languages. You can find the dictionaries
+[here](https://github.com/wooorm/dictionaries).
 
     B. **Update the Dictionary Path** in the code: Update the path to the
       dictionaries in the following line:
