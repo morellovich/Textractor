@@ -154,6 +154,10 @@ python Textractor.py
 - For optimal performance, ensure your PDF files have a high-resolution
   image for accurate OCR.
 
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
 ## 📜 License
 
 This project is licensed under the MIT License. See the LICENSE file for
