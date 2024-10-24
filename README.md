@@ -1,4 +1,4 @@
-**Textractor 📝**
+# 📝 Textractor
 
 **Textractor** is a Python application that converts non-searchable PDFs
 into searchable PDFs using Optical Character Recognition (OCR) with
@@ -7,7 +7,18 @@ spell-checking for extracted text using dictionaries and allows batch
 processing of PDF files through a user-friendly graphical interface
 (GUI).
 
-**💡 Features**
+## 🎯 Purpose
+
+Have you ever needed to:
+
+- Copy Text from a PDF File?
+- Search for PDF files containing specific words?
+- Organize you document by their content?
+- Prepare a folder structure before migrating files?
+
+**Textractor** solves these problems by scanning you PDF file in s specific PATh, exact the texts and spell check them before storing new searchable versions of the PDF files. Don't worry, PDF files with selectable texts will be ignored
+
+## 💡 Features
 
 - 📄 Converts non-searchable PDFs into searchable ones.
 
@@ -22,7 +33,9 @@ processing of PDF files through a user-friendly graphical interface
 
 - 📂 Allows selecting custom output directories for processed files.
 
-**🚀 Installation**
+- 🗃️ Respects your folder structure by mirorring the original folder structure from the source folder.
+
+## 🛠️ Installation
 
 **1. Install Tesseract OCR**
 
@@ -37,41 +50,35 @@ processing of PDF files through a user-friendly graphical interface
 In the Textractor code, update the following line with the correct path
 to the Tesseract-OCR executable (make sure the path is correct):
 
-python
-
-Copy code
-
-pytesseract.pytesseract.tesseract_cmd =
-r\'C:\Path\To\Tesseract-OCR\tesseract.exe\'
+```python
+pytesseract.pytesseract.tesseract_cmd = r\'C:\Path\To\Tesseract-OCR\tesseract.exe\'
+```
 
 **3. Install Required Python Packages**
 
 Run the following command to install all necessary dependencies:
 
-bash
+```bash
+pip install pdf2image pytesseract tkinter pyenchan
+```
 
-Copy code
-
-pip install pdf2image pytesseract tkinter pyenchant
+t
 
 **4. Hunspell Dictionaries Setup**
 
 To ensure the spell-check functionality works:
 
-1.  **Install Hunspell Dictionaries**: Download and install **Hunspell**
-    dictionaries for **German** (de_DE) and **English** (en_US)
-    languages. You can find the dictionaries
-    [here](https://github.com/wooorm/dictionaries).
+A. **Install Hunspell Dictionaries**: Download and install **Hunspell**
+dictionaries for **German** (de_DE) and **English** (en_US)
+languages. You can find the dictionaries
+[here](https://github.com/wooorm/dictionaries).
 
-2.  **Update the Dictionary Path** in the code: Update the path to the
-    dictionaries in the following line:
+B. **Update the Dictionary Path** in the code: Update the path to the
+dictionaries in the following line:
 
-python
-
-Copy code
-
-enchant.set_param(\"enchant.myspell.dictionary.path\",
-r\'C:\Path\To\Hunspell\Dictionaries\')
+```python
+enchant.set_param(\"enchant.myspell.dictionary.path\", r\'C:\Path\To\Hunspell\Dictionaries\')
+```
 
 **5. Update Environment PATH Variables**
 
@@ -79,17 +86,15 @@ Ensure that both **Tesseract OCR** and **Hunspell** paths are included
 in your system's PATH environment variables to allow the software to
 locate them during execution.
 
-**📝 How to Use**
+## 🚀 How to Use
 
 **1. Launch the Application**
 
 Simply run the Python script using the following command:
 
-bash
-
-Copy code
-
+```bash
 python Textractor.py
+```
 
 **2. Select Input and Output Folders**
 
@@ -118,7 +123,7 @@ python Textractor.py
   details of the processing results, such as errors or successfully
   processed files.
 
-**🛠️ Dependencies**
+## 🛠️ Dependencies
 
 - [Tesseract OCR](https://github.com/tesseract-ocr/tesseract)
 
@@ -132,7 +137,7 @@ python Textractor.py
 
 - [Hunspell Dictionaries](https://github.com/wooorm/dictionaries)
 
-**📝 Additional Notes**
+## 📝 Additional Notes
 
 - Ensure that **Tesseract OCR** and **Hunspell** dictionaries are
   correctly installed and their paths are configured in the code and
@@ -142,16 +147,15 @@ python Textractor.py
   languages. To add support for additional languages, update the OCR
   command in the code:
 
-python
+  ````python
+  raw_text = pytesseract.image_to_string(image, lang=\"deu+eng\")   ```
 
-Copy code
-
-raw_text = pytesseract.image_to_string(image, lang=\"deu+eng\")
+  ````
 
 - For optimal performance, ensure your PDF files have a high-resolution
   image for accurate OCR.
 
-**📜 License**
+## 📜 License
 
 This project is licensed under the MIT License. See the LICENSE file for
 details.
