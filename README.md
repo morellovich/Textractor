@@ -47,6 +47,7 @@ If you have Homebrew installed, you can install Poppler by running the following
 
     ```bash
     brew brew install tesseract
+
     ```
 
 _C- For Linux (Ubuntu/Debian):_
