@@ -39,8 +39,11 @@ Have you ever needed to:
 
 **1. Install Tesseract OCR**
 
-- Download and install **Tesseract OCR** from
-  [here](https://github.com/tesseract-ocr/tesseract).
+- Download and install the least release of **Tesseract OCR Windows installer** from [UB Mannheim](https://github.com/UB-Mannheim)
+  [here](https://github.com/UB-Mannheim/tesseract).
+
+- For installation on other os refer to the
+  [original download page of **Tesseract OCR**](https://github.com/tesseract-ocr/tessdoc/blob/main/Downloads.md)
 
 - During installation, note the installation path. You will need to
   update the path in the code.
@@ -165,3 +168,7 @@ details.
 
 Enjoy using **Textractor** to make your PDF files searchable and
 error-free with integrated spell-checking
+
+## 🙏 Acknowledgments
+
+- Thanks to [UB Mannheim](https://github.com/UB-Mannheim) for making **Tesseract OCR** [Windows installer](https://github.com/UB-Mannheim/tesseract)
