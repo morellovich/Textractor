@@ -213,7 +213,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📜 License
 
-This project is licensed under the MIT License. See the LICENSE file for
+This project is licensed under the Apache License 2.0. See the LICENSE file for
 details.
 
 Enjoy using **Textractor** to make your PDF files searchable and
