@@ -14,7 +14,6 @@ Have you ever needed to:
 - Copy Text from a PDF File?
 - Search for PDF files containing specific words?
 - Organize you document by their content?
-- Prepare a folder structure before migrating files?
 
 **Textractor** solves these problems by scanning you PDF files in s specific PATh, extract the texts and spell check them before storing new searchable versions of the PDF files. Don't worry, PDF files with selectable texts will be ignored!
 
