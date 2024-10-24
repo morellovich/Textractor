@@ -130,6 +130,12 @@ dictionaries in the following line:
 enchant.set_param(\"enchant.myspell.dictionary.path\", r\'C:\Path\To\Hunspell\Dictionaries\')
 ```
 
+On other OS (Not Windows)
+
+```python
+enchant.set_param(\"enchant.myspell.dictionary.path\", 'Path/To/Hunspell/Dictionaries/')'
+```
+
 **6. Update Environment PATH Variables**
 
 Ensure that **Tesseract OCR**, **Hunspell**, and **Poppler** paths are included
