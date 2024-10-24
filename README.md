@@ -45,10 +45,10 @@ _A- For Windows:_ - Download and install the least release of **Tesseract OCR Wi
 _B- For MacOS:_
 If you have Homebrew installed, you can install Poppler by running the following command
 
-    ```bash
-    brew brew install tesseract
+```bash
+brew brew install tesseract
 
-    ```
+```
 
 _C- For Linux (Ubuntu/Debian):_
 Install Tesseract via APT
