@@ -16,7 +16,7 @@ Have you ever needed to:
 - Organize you document by their content?
 - Prepare a folder structure before migrating files?
 
-**Textractor** solves these problems by scanning you PDF file in s specific PATh, exact the texts and spell check them before storing new searchable versions of the PDF files. Don't worry, PDF files with selectable texts will be ignored
+**Textractor** solves these problems by scanning you PDF files in s specific PATh, extract the texts and spell check them before storing new searchable versions of the PDF files. Don't worry, PDF files with selectable texts will be ignored!
 
 ## 💡 Features
 
@@ -33,7 +33,7 @@ Have you ever needed to:
 
 - 📂 Allows selecting custom output directories for processed files.
 
-- 🗃️ Respects your folder structure by mirorring the original folder structure from the source folder.
+- 🗃️ Respects your folder structure by mirroring the original folder structure from the source folder.
 
 ## 🛠️ Installation
 
