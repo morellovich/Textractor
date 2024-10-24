@@ -37,16 +37,34 @@ Have you ever needed to:
 
 ## 🛠️ Installation
 
+_A- For Windows:_
+
 **1. Install Tesseract OCR**
 
 - Download and install the least release of **Tesseract OCR Windows installer** from [UB Mannheim](https://github.com/UB-Mannheim)
   [here](https://github.com/UB-Mannheim/tesseract).
+
+_B- For MacOS:_
+If you have Homebrew installed, you can install Poppler by running the following command
+
+```bash
+brew brew install tesseract
+```
+
+_C- For Linux (Ubuntu/Debian):_
+Install Tesseract via APT
+
+```bash
+sudo apt-get install tesseract-ocr
+```
 
 - For installation on other os refer to the
   [original download page of **Tesseract OCR**](https://github.com/tesseract-ocr/tessdoc/blob/main/Downloads.md)
 
 - During installation, note the installation path. You will need to
   update the path in the code.
+
+_*Verify Installation*_ by running `tesseract -v`
 
 **2. Update the Path in Code**
 
@@ -61,14 +79,35 @@ On other OS (Not Windows)
 
 ```python
 pytesseract.pytesseract.tesseract_cmd = 'Path/To/Tesseract-OCR/executable/'
+
+
 ```
 
-**3. Download and Install Poppler** binaries from [**Owen Schwartz**](https://github.com/oschwartz10612)
+**3. Download and Install Poppler**
+_A- For Windows:_
+
+Download Poppler binaries from [**Owen Schwartz**](https://github.com/oschwartz10612)
 [here](https://github.com/oschwartz10612/poppler-windows/releases).
 
 Add PATH variables for Poppler to accordingly to `poppler\bin`
 
-**3. Install Required Python Packages**
+_B- For MacOS:_
+
+If you have Homebrew installed, you can install Poppler by running the following command
+
+```bash
+brew install poppler
+```
+
+_C- For Linux (Ubuntu/Debian):_
+
+```bash
+sudo apt-get install poppler-utils
+```
+
+_*Verify Installation*_ by running `pdftoppm -v`
+
+**4. Install Required Python Packages**
 
 Run the following command to install all necessary dependencies:
 
@@ -76,7 +115,7 @@ Run the following command to install all necessary dependencies:
 pip install pdf2image pytesseract tkinter pyenchant
 ```
 
-**4. Hunspell Dictionaries Setup**
+**5. Hunspell Dictionaries Setup**
 
 To ensure the spell-check functionality works:
 
@@ -92,9 +131,9 @@ dictionaries in the following line:
 enchant.set_param(\"enchant.myspell.dictionary.path\", r\'C:\Path\To\Hunspell\Dictionaries\')
 ```
 
-**5. Update Environment PATH Variables**
+**6. Update Environment PATH Variables**
 
-Ensure that **Tesseract OCR** and **Hunspell** paths are included
+Ensure that **Tesseract OCR**, **Hunspell**, and **Poppler** paths are included
 in your system's PATH environment variables to allow the software to
 locate them during execution.
 
