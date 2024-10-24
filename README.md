@@ -37,26 +37,24 @@ Have you ever needed to:
 
 ## 🛠️ Installation
 
-_A- For Windows:_
-
 **1. Install Tesseract OCR**
 
-- Download and install the least release of **Tesseract OCR Windows installer** from [UB Mannheim](https://github.com/UB-Mannheim)
-  [here](https://github.com/UB-Mannheim/tesseract).
+_A- For Windows:_ - Download and install the least release of **Tesseract OCR Windows installer** from [UB Mannheim](https://github.com/UB-Mannheim)
+[here](https://github.com/UB-Mannheim/tesseract).
 
 _B- For MacOS:_
 If you have Homebrew installed, you can install Poppler by running the following command
 
-```bash
-brew brew install tesseract
-```
+    ```bash
+    brew brew install tesseract
+    ```
 
 _C- For Linux (Ubuntu/Debian):_
 Install Tesseract via APT
 
-```bash
-sudo apt-get install tesseract-ocr
-```
+    ```bash
+    sudo apt-get install tesseract-ocr
+    ```
 
 - For installation on other os refer to the
   [original download page of **Tesseract OCR**](https://github.com/tesseract-ocr/tessdoc/blob/main/Downloads.md)
@@ -77,64 +75,64 @@ pytesseract.pytesseract.tesseract_cmd = r\'C:\Path\To\Tesseract-OCR\tesseract.ex
 
 On other OS (Not Windows)
 
-```python
-pytesseract.pytesseract.tesseract_cmd = 'Path/To/Tesseract-OCR/executable/'
-
-
-```
+    ```python
+    pytesseract.pytesseract.tesseract_cmd = 'Path/To/Tesseract-OCR/executable/'
+    ```
 
 **3. Download and Install Poppler**
+
 _A- For Windows:_
 
-Download Poppler binaries from [**Owen Schwartz**](https://github.com/oschwartz10612)
-[here](https://github.com/oschwartz10612/poppler-windows/releases).
+    Download Poppler binaries from [**Owen Schwartz**](https://github.com/oschwartz10612)
+    [here](https://github.com/oschwartz10612/poppler-windows/releases).
 
-Add PATH variables for Poppler to accordingly to `poppler\bin`
+    Add PATH variables for Poppler to accordingly to `poppler\bin`
 
 _B- For MacOS:_
 
-If you have Homebrew installed, you can install Poppler by running the following command
+    If you have Homebrew installed, you can install Poppler by running the following command
 
-```bash
-brew install poppler
-```
+    ```bash
+    brew install poppler
+    ```
 
 _C- For Linux (Ubuntu/Debian):_
 
-```bash
-sudo apt-get install poppler-utils
-```
+    ```bash
+    sudo apt-get install poppler-utils
+    ```
 
-_*Verify Installation*_ by running `pdftoppm -v`
+    _*Verify Installation*_ by running `pdftoppm -v`
 
 **4. Install Required Python Packages**
 
-Run the following command to install all necessary dependencies:
+    Run the following command to install all necessary dependencies:
 
-```bash
-pip install pdf2image pytesseract tkinter pyenchant
-```
+    ```bash
+    pip install pdf2image pytesseract tkinter pyenchant
+    ```
 
 **5. Hunspell Dictionaries Setup**
 
 To ensure the spell-check functionality works:
 
-A. **Install Hunspell Dictionaries**: Download and install **Hunspell**
-dictionaries for **German** (de_DE) and **English** (en_US)
-languages. You can find the dictionaries
-[here](https://github.com/wooorm/dictionaries).
+    A. **Install Hunspell Dictionaries**:
+      Download and install **Hunspell**
+      dictionaries for **German** (de_DE) and **English** (en_US)
+      languages. You can find the dictionaries
+      [here](https://github.com/wooorm/dictionaries).
 
-B. **Update the Dictionary Path** in the code: Update the path to the
-dictionaries in the following line:
+    B. **Update the Dictionary Path** in the code: Update the path to the
+      dictionaries in the following line:
 
-```python
-enchant.set_param(\"enchant.myspell.dictionary.path\", r\'C:\Path\To\Hunspell\Dictionaries\')
-```
+      ```python
+      enchant.set_param(\"enchant.myspell.dictionary.path\", r\'C:\Path\To\Hunspell\Dictionaries\')
+      ```
 
 **6. Update Environment PATH Variables**
 
 Ensure that **Tesseract OCR**, **Hunspell**, and **Poppler** paths are included
-in your system's PATH environment variables to allow the software to
+in your system's **PATH** environment variables to allow the software to
 locate them during execution.
 
 ## 🚀 How to Use
@@ -149,23 +147,21 @@ python Textractor.py
 
 **2. Select Input and Output Folders**
 
-- A GUI will appear where you can select the folder containing the **PDF
-  files** to process.
+    - A GUI will appear where you can select the folder containing the **PDFfiles** to process.
 
-- Use the **\"Browse\"** button to select both **Input** and **Output**
-  folders:
+    - Use the **\"Browse\"** button to select both **Input** and **Output**
+    folders:
 
-  - **Input Folder**: Contains the non-searchable PDF files.
+    - **Input Folder**: Contains the non-searchable PDF files.
 
-  - **Output Folder**: Where the processed searchable PDFs will be
-    saved.
+    - **Output Folder**: Where the processed searchable PDFs will be saved.
 
 **3. Start the PDF Conversion**
 
-- Once folders are selected, click the **\"Start Conversion\"** button.
+    - Once folders are selected, click the **\"Start Conversion\"** button.
 
-- The app will process each PDF in the input folder, check if it's
-  non-searchable, and convert it to a searchable PDF if needed.
+    - The app will process each PDF in the input folder, check if it's
+    non-searchable, and convert it to a searchable PDF if needed.
 
 **4. Review the Conversion Log**
 
@@ -194,9 +190,9 @@ python Textractor.py
   correctly installed and their paths are configured in the code and
   system PATH.
 
-- The app currently supports OCR for both **German** and **English**
-  languages. To add support for additional languages, update the OCR
-  command in the code:
+  - The app currently supports OCR for both **German** and **English**
+    languages. To add support for additional languages, update the OCR
+    command in the code:
 
   ```python
   raw_text = pytesseract.image_to_string(image, lang=\"deu+eng\")
