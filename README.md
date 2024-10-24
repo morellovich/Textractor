@@ -123,12 +123,12 @@ dictionaries for **German** (de_DE) and **English** (en_US)
 languages. You can find the dictionaries
 [here](https://github.com/wooorm/dictionaries).
 
-    B. **Update the Dictionary Path** in the code: Update the path to the
-      dictionaries in the following line:
+B. **Update the Dictionary Path** in the code: Update the path to the
+dictionaries in the following line:
 
-      ```python
-      enchant.set_param(\"enchant.myspell.dictionary.path\", r\'C:\Path\To\Hunspell\Dictionaries\')
-      ```
+```python
+enchant.set_param(\"enchant.myspell.dictionary.path\", r\'C:\Path\To\Hunspell\Dictionaries\')
+```
 
 **6. Update Environment PATH Variables**
 
@@ -148,21 +148,21 @@ python Textractor.py
 
 **2. Select Input and Output Folders**
 
-    - A GUI will appear where you can select the folder containing the **PDFfiles** to process.
+- A GUI will appear where you can select the folder containing the **PDFfiles** to process.
 
-    - Use the **\"Browse\"** button to select both **Input** and **Output**
-    folders:
+- Use the **\"Browse\"** button to select both **Input** and **Output**
+  folders:
 
-    - **Input Folder**: Contains the non-searchable PDF files.
+- **Input Folder**: Contains the non-searchable PDF files.
 
-    - **Output Folder**: Where the processed searchable PDFs will be saved.
+- **Output Folder**: Where the processed searchable PDFs will be saved.
 
 **3. Start the PDF Conversion**
 
-    - Once folders are selected, click the **\"Start Conversion\"** button.
+- Once folders are selected, click the **\"Start Conversion\"** button.
 
-    - The app will process each PDF in the input folder, check if it's
-    non-searchable, and convert it to a searchable PDF if needed.
+- The app will process each PDF in the input folder, check if it's
+  non-searchable, and convert it to a searchable PDF if needed.
 
 **4. Review the Conversion Log**
 
