@@ -147,10 +147,9 @@ python Textractor.py
   languages. To add support for additional languages, update the OCR
   command in the code:
 
-  ````python
-  raw_text = pytesseract.image_to_string(image, lang=\"deu+eng\")   ```
-
-  ````
+  ```python
+  raw_text = pytesseract.image_to_string(image, lang=\"deu+eng\")
+  ```
 
 - For optimal performance, ensure your PDF files have a high-resolution
   image for accurate OCR.
